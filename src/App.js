@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import "whatwg-fetch";
 import './App.css';
 import RSVG from './commponents/reactIveSvg'
-const url = "http://localhost:3001/message";
-
+//const url = "http://localhost:3001/message";
+const url = "/message";
 class App extends Component {
   constructor(props) {
     super(props);
