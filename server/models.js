@@ -1,9 +1,9 @@
 var mongoose = require("mongoose");
 
-var StatSchema = new mongoose.Schema({
+var DotSchema = new mongoose.Schema({
   
   dots: Array,
   
 });
 
-module.exports = mongoose.model("Dot", StatSchema);
+module.exports = mongoose.model("Dot", DotSchema);

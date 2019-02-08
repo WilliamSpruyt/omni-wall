@@ -30,3 +30,30 @@
     transform: rotate(360deg);
   }
 }
+
+.colourBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+    left: 5%;
+    top: 5%;
+}
+.share{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+    left: 0%;
+    top: 0%;
+}
+.canvi{
+  
+  touch-action: none
+}
+
+body{
+  overflow: hidden;
+}

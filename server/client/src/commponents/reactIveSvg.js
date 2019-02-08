@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import '../App.css';
-var down=false;
+ 
 class ReactiveSVG extends Component {
     componentWillMount(){
          
@@ -17,9 +17,8 @@ class ReactiveSVG extends Component {
         width={this.props.width}
         height={this.props.height}
          
-        onMouseDown={()=>this.down=true}
-        onMouseUp={()=>this.down=false}
-        onMouseMove={e => this.down && this.props.handleClick(e)}
+         
+        onMouseMove={e =>  this.props.handleClick(e)}
        >  <ellipse
            
            
