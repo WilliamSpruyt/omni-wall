@@ -108,7 +108,8 @@ class App extends Component {
     // fetch returns a promise. If you are not familiar with promises, see
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
     fetch(url)
-      .then(data => data.json())
+      .then(
+        data => data.json());console.log(data)
       .then(res => {
         if (!res.success) this.setState({ error: res.error });
         else

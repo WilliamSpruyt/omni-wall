@@ -23,7 +23,7 @@ const API_PORT = process.env.PORT || 3001;
 //for local db
 //mongoose.connect('mongodb://127.0.0.1:27017/dots',{ useNewUrlParser: true });
 //for cosmos.db
-console.log("!"+process.env.dbURI, process.env.dbName,  process.env.key);
+ 
 mongoose.connect(process.env.dbURI,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true });
 var db = mongoose.connection;
 
