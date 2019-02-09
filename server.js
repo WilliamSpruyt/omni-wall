@@ -38,6 +38,7 @@ app.use(cors());
 app.get("/message", (_req, res) => {
   Dot.find((err, comments) => {
     if (err) return res.json({ success: false, error: err });
+    
     return res.json({ success: true, data: comments });
   });
 });

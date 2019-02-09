@@ -109,7 +109,7 @@ class App extends Component {
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
     fetch(url)
       .then(
-        data => data.json());console.log(data)
+        data => data.json())
       .then(res => {
         if (!res.success) this.setState({ error: res.error });
         else
