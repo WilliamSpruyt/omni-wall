@@ -3,7 +3,7 @@ const express = require("express");
 const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config();
-const Dot = require("models");
+const Dot = require("./models");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
