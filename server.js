@@ -24,7 +24,8 @@ const API_PORT = process.env.PORT || 3001;
 //mongoose.connect('mongodb://127.0.0.1:27017/dots',{ useNewUrlParser: true });
 //for cosmos.db
  
-mongoose.connect(process.env.dbURI,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true });
+mongoose.connect(process.env.dbURI,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true }).then(() => console.log('Connection to CosmosDB successful'))
+.catch((err) => console.error(err));
 var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
