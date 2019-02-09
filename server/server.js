@@ -8,8 +8,8 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 //const mongoUri = `mongodb://${env.dbName}.documents.azure.com:${env.cosmosPort}/?ssl/=true&sslverifycertificate=false`;
-const mongoUri='mongodb://dottybase:iP94TfwK90MUV7eMt3aAHo7QxmOL8Odf6u5X8dJd1T4JCiX41zE7yS0N1vRHyWWWUzfD3UlwSGaPN9ZFWaR2Aw==@dottybase.documents.azure.com:10255/?ssl=true&replicaSet=globaldb'
-console.log(mongoUri)
+const mongoUri=env.dbURI;
+ 
 // and create our instances
 const app = express();
  
@@ -19,7 +19,7 @@ var cors = require("cors");
 const API_PORT = process.env.PORT || 3001;
 // db config -- set your URI from mLab in secrets.js
  //for mlab
-//mongoose.connect   ('mongodb://Admin:0mniWall@ds125073.mlab.com:25073/dots');
+//mongoose.connect   (env.mLabURI);
 //for local db
 //mongoose.connect('mongodb://127.0.0.1:27017/dots',{ useNewUrlParser: true });
 //for cosmos.db
