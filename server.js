@@ -7,7 +7,7 @@ const Dot = require("./models");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const mongoUri = `mongodb://${process.env.dbName}.documents.azure.com:${process.env.cosmosPort}/?ssl/=true&sslverifycertificate=false`;
+const mongoUri = `mongodb://${process.env.dbName}.documents.azure.com:${process.env.cosmosPort}/?ssl/=true`;
 //const mongoUri=env.dbURI;
  
 // and create our instances
