@@ -12,7 +12,7 @@ const mongoUri = `mongodb://${process.env.dbName}.documents.azure.com:${process.
  
 // and create our instances
 const app = express();
- 
+ console.log( mongoUri );
 var cors = require("cors");
 
 // set our port to either a predetermined port number if you have set it up, or 3001
