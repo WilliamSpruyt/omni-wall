@@ -7,7 +7,7 @@ const Dot = require("./models");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-//const mongoUri = `mongodb://${env.dbName}.documents.azure.com:${env.cosmosPort}/?ssl/=true&sslverifycertificate=false`;
+const mongoUri = `mongodb://${env.dbName}.documents.azure.com:${env.cosmosPort}/?ssl/=true&sslverifycertificate=false`;
 //const mongoUri=env.dbURI;
  
 // and create our instances
@@ -25,7 +25,9 @@ const API_PORT = process.env.PORT || 3001;
 //mongoose.connect('mongodb://127.0.0.1:27017/dots',{ useNewUrlParser: true });
 //for cosmos.db
  
-mongoose.connect(process.env.dbURI,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true });
+
+mongoose.connect(mongoUri,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true }).then(() => console.log('connection successful'))
+.catch((err) => console.error(err));
  
 
   var db = mongoose.connection;
