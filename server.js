@@ -14,7 +14,7 @@ const mongoose = require("mongoose");
 const app = express();
  
 var cors = require("cors");
-const mongoUri = `mongodb://${process.env.dbName}.documents.azure.com/?ssl/=true`;
+const mongoUri = `mongodb://${process.env.dbName}.documents.azure.com:${env.cosmosPort}/?ssl/=true`;
 // set our port to either a predetermined port number if you have set it up, or 3001
 const API_PORT = process.env.PORT || 3001;
  
