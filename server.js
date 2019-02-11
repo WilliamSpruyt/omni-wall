@@ -17,6 +17,10 @@ var cors = require("cors");
 
 // set our port to either a predetermined port number if you have set it up, or 3001
 const API_PORT = process.env.PORT || 3001;
+console.log("API_PORT "+process.env.PORT );
+console.log("process.env.dbURI "+process.env.PORT );
+console.log("process.env.dbName "+process.env.dbName);
+console.log("process.env.key "+process.env.key );
 // db config -- set your URI from mLab in secrets.js
  //for mlab
 //mongoose.connect   (env.mLabURI);
@@ -25,7 +29,9 @@ const API_PORT = process.env.PORT || 3001;
 //for cosmos.db
  
 mongoose.connect(process.env.dbURI,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true });
-var db = mongoose.connection;
+ 
+
+  var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 // now we should configure the API to use bodyParser and look for JSON data in the request body

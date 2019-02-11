@@ -65,7 +65,8 @@ class App extends Component {
    
    }
    componentDidMount() {
-     
+    console.log("appjs API_PORT "+process.env.PORT );
+    
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
   
