@@ -18,7 +18,7 @@ var cors = require("cors");
 // set our port to either a predetermined port number if you have set it up, or 3001
 const API_PORT = process.env.PORT || 3001;
 console.log("API_PORT "+process.env.PORT );
-console.log("process.env.dbURI "+process.env.PORT );
+console.log("process.env.dbURI "+process.env.dbURI );
 console.log("process.env.dbName "+process.env.dbName);
 console.log("process.env.key "+process.env.key );
 // db config -- set your URI from mLab in secrets.js
