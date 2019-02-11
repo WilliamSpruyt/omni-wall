@@ -14,7 +14,7 @@ const mongoose = require("mongoose");
 const app = express();
  
 var cors = require("cors");
-
+const mongoUri = `mongodb://${process.env.dbName}.documents.azure.com:${env.cosmosPort}/?ssl/=true`;
 // set our port to either a predetermined port number if you have set it up, or 3001
 const API_PORT = process.env.PORT || 3001;
  
@@ -24,8 +24,8 @@ const API_PORT = process.env.PORT || 3001;
 //for local db
 //mongoose.connect('mongodb://127.0.0.1:27017/dots',{ useNewUrlParser: true });
 //for cosmos.db
- 
-mongoose.connect(process.env.dbURI,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true });
+
+mongoose.connect(mongoUri,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true });
  
 
   var db = mongoose.connection;
