@@ -7,10 +7,9 @@ const Dot = require("./models");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const mongoUri = `mongodb://${process.env.dbName}.documents.azure.com:${process.env.cosmosPort}/?ssl/=true`;
+const mongoUri = `mongodb://${process.env.dbName}.documents.azure.com:${process.env.cosmosPort}/?ssl/=true&sslverifycertificate=false`;
 //const mongoUri=env.dbURI;
  
-// and create our instances
 const app = express();
  console.log( mongoUri );
 var cors = require("cors");
