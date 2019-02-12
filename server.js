@@ -7,6 +7,7 @@ const Dot = require("./models");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
+mongoose.Promise=global.Promise;
 const mongoUri = `mongodb://${process.env.dbName}.documents.azure.com:${process.env.cosmosPort}/?ssl/=true&sslverifycertificate=false`;
 //const mongoUri=env.dbURI;
  
@@ -26,7 +27,7 @@ const API_PORT = process.env.PORT || 3001;
  
 
 mongoose.connect(mongoUri,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true }).then(() => console.log('connection successful'))
-.catch((err) => console.error("oh fuck! "+err));
+.catch((err) => console.error("oh fuck! "  err));
  
 
   var db = mongoose.connection;
