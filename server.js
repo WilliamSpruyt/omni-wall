@@ -26,7 +26,7 @@ const API_PORT = process.env.PORT || 3001;
  
 
 mongoose.connect(mongoUri,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true }).then(() => console.log('connection successful'))
-.catch((err) => console.error(err));
+.catch((err) => console.error("oh fuck! "+err));
  
 
   var db = mongoose.connection;
