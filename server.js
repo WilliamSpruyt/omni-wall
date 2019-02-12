@@ -20,7 +20,7 @@ const API_PORT = process.env.PORT || 3001;
  
 // db config -- set your URI from mLab in secrets.js
  //for mlab
-mongoose.connect(env.mLabURI,{ useNewUrlParser: true });
+mongoose.connect(process.env.mLabURI,{ useNewUrlParser: true });
 //for local db
 //mongoose.connect('mongodb://127.0.0.1:27017/dots',{ useNewUrlParser: true });
 //for cosmos.db
