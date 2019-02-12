@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 mongoose.Promise=global.Promise;
-const mongoUri = `mongodb://${process.env.dbName}.documents.azure.com:${process.env.cosmosPort}/?ssl/=true&sslverifycertificate=false`;
+const mongoUri = `mongodb://${process.env.dbName}.documents.azure.com:${process.env.cosmosPort}/dots?ssl/=true&sslverifycertificate=false`;
 //const mongoUri=env.dbURI;
  
 const app = express();
@@ -20,14 +20,14 @@ const API_PORT = process.env.PORT || 3001;
  
 // db config -- set your URI from mLab in secrets.js
  //for mlab
-mongoose.connect(process.env.mLabURI,{ useNewUrlParser: true });
+//mongoose.connect(process.env.mLabURI,{ useNewUrlParser: true });
 //for local db
 //mongoose.connect('mongodb://127.0.0.1:27017/dots',{ useNewUrlParser: true });
 //for cosmos.db
  
 
-/*mongoose.connect(mongoUri,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true }).then(() => console.log('connection successful'))
-.catch((err) => console.error("oh fuck! "+ err));*/
+mongoose.connect(mongoUri,{ auth: { user: process.env.dbName, password: process.env.key }, useNewUrlParser: true }).then(() => console.log('connection successful'))
+.catch((err) => console.error("oh fuck! "+ err));
  
 
   var db = mongoose.connection;
