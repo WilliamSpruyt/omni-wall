@@ -24,16 +24,16 @@ const API_PORT = process.env.PORT || 3001;
  
 // db config -- set your URI from mLab in secrets.js
  //for mlab
-mongoose.connect(process.env.mLabURI,{ useNewUrlParser: true });
+//mongoose.connect(process.env.mLabURI,{ useNewUrlParser: true });
 //for local db
 //mongoose.connect('mongodb://127.0.0.1:27017/dots',{ useNewUrlParser: true });
 //for cosmos.db
-/*mongoose.connect(mongoUri,{ useNewUrlParser: true }).then(() => console.log('connection successful'))
-.catch((err) => console.error("oh fuck! "+ err));*/
+mongoose.connect(mongoUri,{ useNewUrlParser: true }).then(() => console.log('connection successful'))
+.catch((err) => console.error("oh balls! "+ err));
  
  
 
-  var db = mongoose.connection;
+var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 // now we should configure the API to use bodyParser and look for JSON data in the request body
